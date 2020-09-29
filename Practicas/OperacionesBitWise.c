@@ -20,11 +20,11 @@ void main( void )
 			printf("2.- Operacion  OR.\n");
 			printf("3.- Operacion XOR.\n");
 			printf("Seleccionar la operacion que se desee: ");
-			scanf("%d", u32VarOperation);
+			scanf("%d", &u32VarOperation);
 
 			if ( u32VarOperation < 1 || u32VarOperation > 3 )
 			{
-				printf("\nError: La operacion debe estar en el campo de opciones mostradas.");
+				printf("Error: La operacion debe estar en el campo de opciones mostradas.\n");
 			}
 			else
 			{
@@ -50,13 +50,13 @@ void main( void )
 				}
 				else
 				{
-					printf("\nError: El corrimiento deseado es mayor a los Bits seleccionados.");
+					printf("Error: El corrimiento deseado es mayor a los Bits seleccionados.\n");
 				}
 			}
 		}
 	}
 	else
 	{
-		printf("\nError: El tamaño de la variable deseada debe de ser entre 8, 16 y 32.");
+		printf("Error: El tamaño de la variable deseada debe de ser entre 8, 16 y 32.\n");
 	}
 }

@@ -16,7 +16,7 @@ void main( void )
 	{
 		while ( 1 )
 		{
-			printf("1.- Operacion AND.\n");
+			printf("\n1.- Operacion AND.\n");
 			printf("2.- Operacion  OR.\n");
 			printf("3.- Operacion XOR.\n");
 			printf("Seleccionar la operacion que se desee: ");
@@ -46,7 +46,7 @@ void main( void )
 						u32AnsVariable ^= ( 1 << u32CorrVariable );
 					}
 
-					printf("Valor de la Variable: %d", u32AnsVariable);
+					printf("Valor de la Variable: %d\n", u32AnsVariable);
 				}
 				else
 				{

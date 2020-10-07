@@ -1,5 +1,6 @@
 #include "stdio.h"
 
+/*PM-> Buen codigo, representaste tal cual el diagrama de flujo*/
 typedef unsigned long uint32;
 
 void main( void )
@@ -22,7 +23,7 @@ void main( void )
 			printf("Seleccionar la operacion que se desee: ");
 			scanf("%d", &u32VarOperation);
 
-			if ( u32VarOperation < 1 || u32VarOperation > 3 )
+			if ( u32VarOperation < 1 || u32VarOperation > 3 )	/*PM -> Recuerda usar defines en lugar de numeros magicos*/
 			{
 				printf("Error: La operacion debe estar en el campo de opciones mostradas.\n");
 			}
@@ -33,11 +34,11 @@ void main( void )
 
 				if ( u32CorrVariable < u32BitsValue)
 				{
-					if ( u32VarOperation == 1 )
+					if ( u32VarOperation == 1 )		/*PM-> Recuerda evitar numeros magicos, mejor usar #define 1 AND_OPTION*/
 					{
 						u32AnsVariable &= ~( 1 << u32CorrVariable );
 					}
-					else if ( u32VarOperation == 2 )
+					else if ( u32VarOperation == 2 )/*PM-> Recuerda evitar numeros magicos, mejor usar #define 2 OR_OPTION*/
 					{
 						u32AnsVariable |= ( 1 << u32CorrVariable );
 					}

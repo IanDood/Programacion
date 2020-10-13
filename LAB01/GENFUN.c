@@ -1,6 +1,9 @@
 #include "stdio.h"
 #include "GENFUN.h"
 
+
+/*Calificacion: 90*/
+
 void main ( void )
 {
 	/*Needed extra variables*/
@@ -173,7 +176,7 @@ uint8 GENFUN_u8GetAverage ( uint8 *pu8Src, uint8 u8SizeOfList )
 
 	for ( u8First = 0; u8First < u8SizeOfList; u8First++ )
 	{
-		u8ArraySum += pu8Src[u8First];
+		u8ArraySum += pu8Src[u8First];		/*Overflow*/
 	}
 
 	u8AverageResult = u8ArraySum / u8SizeOfList;
@@ -183,7 +186,7 @@ uint8 GENFUN_u8GetAverage ( uint8 *pu8Src, uint8 u8SizeOfList )
 
 void GENFUN_u8MemSet ( uint8 *pu8Src, uint8 u8Char2Set, uint8 u8SizeOfList )
 {
-    uint8 *pu8Destination = pu8Src;
+    uint8 *pu8Destination = pu8Src;		/*Pudiste haber usado el mismo apuntador en lugar de crear otro*/
 
     while ( u8SizeOfList -- > 0 )
     {
@@ -195,7 +198,7 @@ void GENFUN_u8MemCopy ( uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList )
 {
 	uint8 u8First = 0;
 
-	for ( u8First = 0; u8First < u8SizeOfList; u8First++ )
+	for ( u8First = 0; u8First < u8SizeOfList; u8First++ )	/*Manejaste los apuntadores como arreglos, en lugar de aputandores*/
     {
         pu8Src[u8First] = pu8Dest[u8First];
     } 
@@ -207,7 +210,7 @@ void GENFUN_vSortList ( uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList )
 	uint8 u8First = 0;
 	uint8 u8Second = 0;
 
-    for ( u8First = 0; u8First < u8SizeOfList; u8First++ ) 
+    for ( u8First = 0; u8First < u8SizeOfList; u8First++ ) 		/*Manejaste los apuntadores como arreglos, en lugar de aputandores*/
     {
         for ( u8Second = u8First + 1; u8Second < u8SizeOfList; u8Second++ )
         {
@@ -235,7 +238,7 @@ void GENFUN_vSoftSignal ( uint8 *pu8Src, uint8 *pu8Dest )
 
 void GENFUN_vFilterSignal ( uint8 *pu8Src, uint8 *pu8Dest, uint8 u8MaxVal, uint8 u8MinVal )
 {
-	for ( int i = 0; i < VARIABLE_CHAR_HIGH_TRESHOLD; i++ ) 
+	for ( int i = 0; i < VARIABLE_CHAR_HIGH_TRESHOLD; i++ ) 		/*No limitas con u8Max y u8Min*/
 	{
 		for ( int j = i + 1; j < VARIABLE_CHAR_HIGH_TRESHOLD; j++ )
 		{

@@ -4,9 +4,11 @@
 void main ( void )
 {
 	/*Card Digits*/
+
 	uint8 au8CardNumber[16] = {6,9,1,7,8,6,7,8,9,2,1,2,3,4,6,5};
 
 	/*Card Information*/
+
 	printf("\nAccount Digit (15 Numbers): ");
 	for ( int i = 0; i < ACCOUNT_NUMBER; i++)
 	{
@@ -20,6 +22,7 @@ void main ( void )
 	}
 
 	/*Checking for Card Validation*/
+
 	uint8 u8Check = u8LuhnCheck(&au8CardNumber[0]);
 	if( u8Check == 0 )
 	{
@@ -33,18 +36,17 @@ void main ( void )
 
 uint8 u8LuhnCheck ( uint8 *pu8Data )
 {
+	/*Variables*/
+
 	uint8 u8Check = 0;
 	uint16 u16OddSum = 0;
 	uint16 u16EvenSum = 0;
 	uint16 u16TotalSum = 0;
-	uint16 u16TotalSum1 = 0;
 	uint8 u8CardSize = CARD_SIZE;
 	uint8 *pu8Validation = pu8Data;
 
 	while ( u8CardSize != 0 )
 	{
-		pu8Validation = pu8Data;
-
 		if ( u8CardSize % 2 == 0 )
 		{
 			u16EvenSum += *pu8Validation; 
